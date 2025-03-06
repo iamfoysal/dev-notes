@@ -1,0 +1,192 @@
+{
+    "id": "curl",
+    "title": "CURL",
+    "slug": "curl",
+    "logo": "https://curl.se/logo/curl-logo.svg",
+    "description": "CURL is a computer software project that provides a library and command-line tool for transferring data using various network protocols. CURL stands for 'Client URL'.",
+    "colorPref": "#07334e",
+    "contents": [
+        {
+            "id": 1,
+            "title": "General Operations",
+            "items": [
+                {
+                    "definition": "Send a GET request to a URL",
+                    "code": "curl http://www.example.com"
+                },
+                {
+                    "definition": "Send a POST request to a URL",
+                    "code": "curl -X POST http://www.example.com"
+                },
+                {
+                    "definition": "Send a PUT request to a URL",
+                    "code": "curl -X PUT http://www.example.com"
+                },
+                {
+                    "definition": "Send a DELETE request to a URL",
+                    "code": "curl -X DELETE http://www.example.com"
+                },
+                {
+                    "definition": "Set a custom user agent",
+                    "code": "curl -A 'Mozilla/5.0 [en] (X11; U; Linux 2.2.15 i686)' http://www.example.com"
+                },
+                {
+                    "definition": "Display the time taken for the request to complete",
+                    "code": "curl -w '%{time_total}\n' -o /dev/null -s http://www.example.com"
+                },
+                {
+                    "definition": "Display the HTTP status code",
+                    "code": "curl -o /dev/null --silent -Iw \"%{http_code}\" http://www.example.com"
+                },
+                {
+                    "definition": "Save the HTTP response to a local file",
+                    "code": "curl -o filepath.txt http://www.example.com"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "File Operations",
+            "items": [
+                {
+                    "definition": "Set FTP username and password",
+                    "code": "curl -u name:passwd ftp://ip:port/path/file\ncurl ftp://name:passwd@ip:port/path/file"
+                },
+                {
+                    "definition": "Upload a file",
+                    "code": "curl -T localfile -u name:passwd ftp://upload_site:port/path/\ncurl -T localfile http://cgi2.tky.3web.ne.jp/~zzh/abc.cgi"
+                },
+                {
+                    "definition": "Download a file",
+                    "code": "curl -o http://www.example.com/path/file.txt"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Data Operations",
+            "items": [
+                {
+                    "definition": "Attach data or query string (QSA) in GET method",
+                    "code": "curl -G -d search=keyword -d status=active http://www.example.com\ncurl -G -d 'search=keyword&status=active' http://www.example.com"
+                },
+                {
+                    "definition": "Send data in POST method",
+                    "code": "curl -X POST -d name=keyword -d age=12 http://www.example.com"
+                },
+                {
+                    "definition": "Send data in POST method with headers",
+                    "code": "curl -X POST -d name=keyword -d age=12 -H 'Content-Type: application/x-www-form-urlencoded' http://www.example.com"
+                },
+                {
+                    "definition": "Send JSON data in POST method",
+                    "code": "curl -X POST -d '{\"login\":\"my_login\",\"password\":\"my_password\"}' http://www.example.com"
+                },
+                {
+                    "definition": "Send JSON data in POST method with headers",
+                    "code": "curl -X POST -d '{\"login\":\"my_login\",\"password\":\"my_password\"}' -H 'Content-Type: application/json' http://www.example.com"
+                },
+                {
+                    "definition": "Send XML data in POST method with headers",
+                    "code": "curl -X POST -d '<Request><Login>my_login</Login><Password>my_password</Password></Request>' -H 'Content-Type: application/xml' http://www.example.com"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Header Operations",
+            "items": [
+                {
+                    "definition": "Add custom header to request",
+                    "code": "curl -H '{key}: {value}' http://www.example.com"
+                },
+                {
+                    "definition": "Get JSON data in response using GET method",
+                    "code": "curl -H 'Accept: application/json' http://www.example.com"
+                },
+                {
+                    "definition": "Get JSON data in response using POST method",
+                    "code": "curl -X POST -H 'Accept: application/json' http://www.example.com"
+                },
+                {
+                    "definition": "Add Basic Auth header",
+                    "code": "curl -u myusername:mypassword http://www.example.com"
+                },
+                {
+                    "definition": "Add Bearer Token Auth header",
+                    "code": "curl -H 'Authorization: Bearer {token_string}' http://www.example.com"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Miscellaneous Operations",
+            "items": [
+                {
+                    "definition": "Ignore SSL/HTTPS certificate errors",
+                    "code": "curl -k https://www.example.com"
+                },
+                {
+                    "definition": "Follow HTTP redirects",
+                    "code": "curl -L http://www.example.com"
+                },
+                {
+                    "definition": "Set request timeout (in seconds)",
+                    "code": "curl --connection-timeout 5 http://www.example.com"
+                },
+                {
+                    "definition": "Check cURL version",
+                    "code": "curl -V"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Authentication Operations",
+            "items": [
+                {
+                    "definition": "Basic authentication",
+                    "code": "curl -u username:password http://www.example.com"
+                },
+                {
+                    "definition": "Digest authentication",
+                    "code": "curl --digest -u username:password http://www.example.com"
+                },
+                {
+                    "definition": "NTLM authentication",
+                    "code": "curl --ntlm -u username:password http://www.example.com"
+                },
+                {
+                    "definition": "Negotiate authentication",
+                    "code": "curl --negotiate -u : http://www.example.com"
+                },
+                {
+                    "definition": "OAuth 2.0 Bearer Token",
+                    "code": "curl -H 'Authorization: Bearer <token>' http://www.example.com"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Proxy Operations",
+            "items": [
+                {
+                    "definition": "Use a proxy for the request",
+                    "code": "curl -x http://proxy.example.com:8080 http://www.example.com"
+                },
+                {
+                    "definition": "Use a proxy with authentication",
+                    "code": "curl -x http://proxy.example.com:8080 -U user:password http://www.example.com"
+                },
+                {
+                    "definition": "Use a SOCKS5 proxy",
+                    "code": "curl -x socks5://proxy.example.com:1080 http://www.example.com"
+                },
+                {
+                    "definition": "Bypass proxy for specific hosts",
+                    "code": "curl --noproxy example.com http://www.example.com"
+                }
+            ]
+        }
+    ]
+}

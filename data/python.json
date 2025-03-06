@@ -1,0 +1,289 @@
+{
+    "id": "python",
+    "title": "Python",
+    "slug": "python",
+    "description": "python এর চিটশিট",
+    "colorPref": "#6cc24a",
+    "contents": [
+        {
+            "id": 1,
+            "title": "Basic Syntax",
+            "items": [
+                {
+                    "definition": "Print to console",
+                    "code": "print('Hello, World!')"
+                },
+                {
+                    "definition": "Variable assignment",
+                    "code": "x = 5\ny = 'Hello'"
+                },
+                {
+                    "definition": "Basic data types",
+                    "code": "int, float, str, bool, list, tuple, dict, set"
+                },
+                {
+                    "definition": "Conditional statements",
+                    "code": "if x > 0:\n    print('Positive')\nelif x == 0:\n    print('Zero')\nelse:\n    print('Negative')"
+                },
+                {
+                    "definition": "For loop",
+                    "code": "for i in range(5):\n    print(i)"
+                },
+                {
+                    "definition": "While loop",
+                    "code": "while x > 0:\n    print(x)\n    x -= 1"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Functions",
+            "items": [
+                {
+                    "definition": "Define a function",
+                    "code": "def my_function():\n    print('Hello from a function')"
+                },
+                {
+                    "definition": "Function with parameters",
+                    "code": "def greet(name):\n    print(f'Hello, {name}')"
+                },
+                {
+                    "definition": "Function with return value",
+                    "code": "def add(a, b):\n    return a + b"
+                },
+                {
+                    "definition": "Lambda function",
+                    "code": "add = lambda a, b: a + b"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Classes and Objects",
+            "items": [
+                {
+                    "definition": "Define a class",
+                    "code": "class MyClass:\n    x = 5"
+                },
+                {
+                    "definition": "Create an object",
+                    "code": "p1 = MyClass()\nprint(p1.x)"
+                },
+                {
+                    "definition": "Class with __init__ method",
+                    "code": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age"
+                },
+                {
+                    "definition": "Object methods",
+                    "code": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    def greet(self):\n        print(f'Hello, my name is {self.name}')"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "File Operations",
+            "items": [
+                {
+                    "definition": "Open a file",
+                    "code": "f = open('file.txt', 'r')"
+                },
+                {
+                    "definition": "Read a file",
+                    "code": "f = open('file.txt', 'r')\nprint(f.read())"
+                },
+                {
+                    "definition": "Write to a file",
+                    "code": "f = open('file.txt', 'w')\nf.write('Hello, World!')\nf.close()"
+                },
+                {
+                    "definition": "Append to a file",
+                    "code": "f = open('file.txt', 'a')\nf.write('Hello, again!')\nf.close()"
+                },
+                {
+                    "definition": "Using 'with' to open a file",
+                    "code": "with open('file.txt', 'r') as f:\n    print(f.read())"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Modules",
+            "items": [
+                {
+                    "definition": "Import a module",
+                    "code": "import math"
+                },
+                {
+                    "definition": "Import specific function from a module",
+                    "code": "from math import sqrt"
+                },
+                {
+                    "definition": "Use a module function",
+                    "code": "import math\nprint(math.sqrt(16))"
+                },
+                {
+                    "definition": "Install a module using pip",
+                    "code": "pip install <module_name>"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Error Handling",
+            "items": [
+                {
+                    "definition": "Try and except block",
+                    "code": "try:\n    print(x)\nexcept:\n    print('An exception occurred')"
+                },
+                {
+                    "definition": "Catch specific exception",
+                    "code": "try:\n    print(x)\nexcept NameError:\n    print('Variable x is not defined')"
+                },
+                {
+                    "definition": "Finally block",
+                    "code": "try:\n    print(x)\nexcept:\n    print('An exception occurred')\nfinally:\n    print('The try except is finished')"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "List Comprehensions",
+            "items": [
+                {
+                    "definition": "Basic list comprehension",
+                    "code": "[x for x in range(10)]"
+                },
+                {
+                    "definition": "List comprehension with condition",
+                    "code": "[x for x in range(10) if x % 2 == 0]"
+                },
+                {
+                    "definition": "Nested list comprehension",
+                    "code": "[[x, y] for x in range(3) for y in range(3)]"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Dictionary Operations",
+            "items": [
+                {
+                    "definition": "Create a dictionary",
+                    "code": "my_dict = {'name': 'John', 'age': 30}"
+                },
+                {
+                    "definition": "Access dictionary value",
+                    "code": "print(my_dict['name'])"
+                },
+                {
+                    "definition": "Add key-value pair",
+                    "code": "my_dict['address'] = '123 Main St'"
+                },
+                {
+                    "definition": "Iterate through dictionary",
+                    "code": "for key, value in my_dict.items():\n    print(key, value)"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Set Operations",
+            "items": [
+                {
+                    "definition": "Create a set",
+                    "code": "my_set = {1, 2, 3}"
+                },
+                {
+                    "definition": "Add an element to a set",
+                    "code": "my_set.add(4)"
+                },
+                {
+                    "definition": "Remove an element from a set",
+                    "code": "my_set.remove(2)"
+                },
+                {
+                    "definition": "Set union",
+                    "code": "set1 = {1, 2, 3}\nset2 = {3, 4, 5}\nunion_set = set1.union(set2)"
+                },
+                {
+                    "definition": "Set intersection",
+                    "code": "intersection_set = set1.intersection(set2)"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "title": "String Operations",
+            "items": [
+                {
+                    "definition": "Concatenate strings",
+                    "code": "str1 = 'Hello'\nstr2 = 'World'\nresult = str1 + ' ' + str2"
+                },
+                {
+                    "definition": "String formatting",
+                    "code": "name = 'John'\nage = 30\nresult = f'My name is {name} and I am {age} years old.'"
+                },
+                {
+                    "definition": "String slicing",
+                    "code": "my_string = 'Hello, World!'\nprint(my_string[0:5])"
+                },
+                {
+                    "definition": "Convert string to uppercase",
+                    "code": "my_string = 'hello'\nprint(my_string.upper())"
+                },
+                {
+                    "definition": "Check if substring exists",
+                    "code": "my_string = 'Hello, World!'\nprint('World' in my_string)"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "title": "List Operations",
+            "items": [
+                {
+                    "definition": "Create a list",
+                    "code": "my_list = [1, 2, 3, 4, 5]"
+                },
+                {
+                    "definition": "Append to a list",
+                    "code": "my_list.append(6)"
+                },
+                {
+                    "definition": "Remove from a list",
+                    "code": "my_list.remove(3)"
+                },
+                {
+                    "definition": "Sort a list",
+                    "code": "my_list.sort()"
+                },
+                {
+                    "definition": "List slicing",
+                    "code": "print(my_list[1:3])"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "title": "Tuple Operations",
+            "items": [
+                {
+                    "definition": "Create a tuple",
+                    "code": "my_tuple = (1, 2, 3)"
+                },
+                {
+                    "definition": "Access tuple elements",
+                    "code": "print(my_tuple[0])"
+                },
+                {
+                    "definition": "Unpack a tuple",
+                    "code": "a, b, c = my_tuple"
+                },
+                {
+                    "definition": "Tuple concatenation",
+                    "code": "tuple1 = (1, 2)\ntuple2 = (3, 4)\nresult = tuple1 + tuple2"
+                }
+            ]
+        }
+    ]
+}

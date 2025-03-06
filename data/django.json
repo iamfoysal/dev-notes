@@ -1,0 +1,476 @@
+{
+    "id": "django",
+    "title": "Django",
+    "logo": "https://www.djangoproject.com/m/img/logos/django-logo-negative.png",
+    "slug": "django",
+    "description": "Django Cheat Sheet",
+    "colorPref": "#6cc24a",
+    "contents": [
+        {   
+            "id": 1,
+            "title": "Pipenv Initialization",
+            "items": [
+                {
+                    "definition": "Create project directory",
+                    "code": "mkdir <directory_name>"
+                },
+                {
+                    "definition": "Navigate to project directory",
+                    "code": "cd <directory_name>"
+                },
+                {
+                    "definition": "Create virtual environment in project directory",
+                    "code": "mkdir <.venv>"
+                },
+                {
+                    "definition": "Initialize pipenv",
+                    "code": "pipenv install"
+                },
+                {
+                    "definition": "Activate pipenv shell",
+                    "code": "pipenv shell"
+                },
+                {
+                    "definition": "Install django",
+                    "code": "pipenv install django"
+                },
+                {
+                    "definition": "Check django version",
+                    "code": "python -m django --version"
+                },
+                {
+                    "definition": "Install any package dependency",
+                    "code": "pipenv install <package_name>"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "(venv) Virtual Environment Initialization",
+            "items": [
+                {
+                    "definition": "Create project directory",
+                    "code": "mkdir <directory_name>"
+                },
+                {
+                    "definition": "Navigate to project directory",
+                    "code": "cd <directory_name>"
+                },
+                {
+                    "definition": "Install virtualenv globally (Windows)",
+                    "code": "py -m pip install --user virtualenv"
+                },
+                {
+                    "definition": "Install virtualenv globally (Linux)",
+                    "code": "pip install virtualenv"
+                },
+                {
+                    "definition": "Initialize venv (Windows)",
+                    "code": "py -m venv env"
+                },
+                {
+                    "definition": "Initialize venv (Linux)",
+                    "code": "virtualenv <directory_name>"
+                },
+                {
+                    "definition": "Activate virtualenv (Windows)",
+                    "code": "./env/Scripts/activate"
+                },
+                {
+                    "definition": "Activate virtualenv (Linux)",
+                    "code": "source env/bin/activate"
+                },
+                {
+                    "definition": "Deactivate virtualenv",
+                    "code": "deactivate"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "pip Commands",
+            "items": [
+                {
+                    "definition": "Check pip version",
+                    "code": "pip --version"
+                },
+                {
+                    "definition": "Upgrade pip",
+                    "code": "python -m pip install --upgrade pip"
+                },
+                {
+                    "definition": "Install django",
+                    "code": "pip install django"
+                },
+                {
+                    "definition": "Install specific django version",
+                    "code": "pip install Django==<needed_version>"
+                },
+                {
+                    "definition": "Install any package dependency",
+                    "code": "pip install <package_name>"
+                },
+                {
+                    "definition": "Install package dependencies from requirements file",
+                    "code": "pip install -r requirements.txt"
+                },
+                {
+                    "definition": "Uninstall any package dependency",
+                    "code": "pip uninstall <package_name>"
+                },
+                {
+                    "definition": "List package dependencies",
+                    "code": "pip list"
+                },
+                {
+                    "definition": "Save package dependencies",
+                    "code": "pip freeze > requirements.txt"
+                }
+            ]
+        },
+        {   
+            "id": 4,
+            "title": "Project",
+            "items": [
+                {
+                    "definition": "Create project",
+                    "code": "django-admin startproject <project_name>"
+                },
+                {
+                    "definition": "Display usage information and a list of commands provided by each application",
+                    "code": "python manage.py help"
+                },
+                {
+                    "definition": "Run development server",
+                    "code": "python manage.py runserver"
+                },
+                {
+                    "definition": "Run development server on specific port",
+                    "code": "python manage.py runserver <port_number>"
+                },
+                {
+                    "definition": "Check django project",
+                    "code": "python manage.py check"
+                },
+                {
+                    "definition": "Interactive interpreter for django project",
+                    "code": "python manage.py shell"
+                },
+                {
+                    "definition": "Clear expired sessions in django project",
+                    "code": "python manage.py clearsessions"
+                }
+            ]
+        },
+        {   
+            "id": 5,
+            "title": "Create App",
+            "items": [
+                {
+                    "definition": "Create app",
+                    "code": "django-admin startapp <app_name>"
+                },
+                {
+                    "definition": "Install app in project's settings.py file",
+                    "code": "INSTALLED_APPS = ['app_name',]"
+                },
+                {
+                    "definition": "Make migrations for all apps",
+                    "code": "python manage.py makemigrations"
+                },
+                {
+                    "definition": "Make migrations for specific app",
+                    "code": "python manage.py makemigrations <app_name>"
+                },
+                {
+                    "definition": "Apply migrations to database",
+                    "code": "python manage.py migrate"
+                }
+            ]
+        },
+        {   
+            "id": 6,
+            "title": "Django Auth",
+            "items": [
+                {
+                    "definition": "Create superuser",
+                    "code": "python manage.py createsuperuser"
+                },
+                {
+                    "definition": "Change password",
+                    "code": "python manage.py changepassword <username>"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Send Email",
+            "items": [
+                {
+                    "definition": "Print email to console",
+                    "code": "EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'"
+                },
+                {
+                    "definition": "Send email using SMTP server",
+                    "code": "EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'"
+                }
+            ]
+        },
+        {   
+            "id": 8,
+            "title": "Static Files",
+            "items": [
+                {
+                    "definition": "Collect all static files to 'static root' folder",
+                    "code": "python manage.py collectstatic"
+                },
+                {
+                    "definition": "Collect all static files to 'static root' folder without user input",
+                    "code": "python manage.py collectstatic --no-input"
+                },
+                {
+                    "definition": "Find static files",
+                    "code": "python manage.py findstatic staticfile [staticfile ...]"
+                }
+            ]
+        },
+        {   
+            "id": 9,
+            "title": "Template Tags",
+            "items": [
+                {
+                    "definition": "Extend template",
+                    "code": "{%extends '<html file name>'%}"
+                },
+                {
+                    "definition": "Extend template tag (to reduce code)",
+                    "code": "{% block content %} ... {% endblock %} or {% block content %} ... {% endblock content %}"
+                },
+                {
+                    "definition": "Include template",
+                    "code": "{%include '<html file name>'%}"
+                },
+                {
+                    "definition": "Load static file inside template",
+                    "code": "{%load static%}"
+                },
+                {
+                    "definition": "Create block inside template",
+                    "code": "{%block <block name>%} ... {%endblock <block name>%}"
+                },
+                {
+                    "definition": "Create condition inside template",
+                    "code": "{%if <condition>%} .. {%elif <condition>%} .. {%else%}...{%endif%}"
+                },
+                {
+                    "definition": "Create loop inside template",
+                    "code": "{%for i in <context data name>%} ... {%endfor%}"
+                },
+                {
+                    "definition": "Create tag",
+                    "code": "{% load <tag_or_filter_lib> %}"
+                },
+                {
+                    "definition": "Use filter",
+                    "code": "{% filter <filter>[|<filter>...] %}"
+                },
+                {
+                    "definition": "Load static file",
+                    "code": "{% load static \"custom.css\" %}"
+                },
+                {
+                    "definition": "Use variable in template",
+                    "code": "{{ variable_name }}"
+                },
+                {
+                    "definition": "Link url",
+                    "code": "{% url \"some-other-page\" %}"
+                },
+                {
+                    "definition": "Pass variable in url",
+                    "code": "{% url \"\"blog-view\"\" blog.id %}"
+                },
+                {
+                    "definition": "Use filter with '|' symbol",
+                    "code": "{{ variable_name | filter_name }}"
+                },
+                {
+                    "definition": "Pass filter argument with '|' symbol",
+                    "code": "{{ variable_name | filter_name:\"argument\"}}"
+                },
+                {
+                    "definition": "Sort dictionary with '|' symbol",
+                    "code": "{{ dictionary_name | dictsort:\"key_name\"}}"
+                },
+                {
+                    "definition": "Filter data type with '|' symbol",
+                    "code": "{{ date_time | time\"H\": \"i\" }}"
+                },
+                {
+                    "definition": "Use comment",
+                    "code": "{% comment %} .... {% endcomment %}"
+                },
+                {
+                    "definition": "Check loop index number",
+                    "code": "{{ forloop.counter }} #starting index 1 Or {{ forloop.counter0 }} # starting index 0"
+                },
+                {
+                    "definition": "Check reverse loop index number",
+                    "code": "{{ forloop.revcounter }} # end index 1 Or {{ forloop.revcounter0 }} # end index 0"
+                },
+                {
+                    "definition": "Check if template has changed",
+                    "code": "{% ifchanged %} …. {% endifchanged %}"
+                },
+                {
+                    "definition": "Generate random text",
+                    "code": "{% lorem %}"
+                },
+                {
+                    "definition": "Current time",
+                    "code": "{% now \"SHORT_DATETIME_FORMAT\" %}"
+                },
+                {
+                    "definition": "Remove whitespace in HTML tags",
+                    "code": "{% spaceless %}  …..  {% endspaceless %}"
+                }
+            ]
+        },
+        {   
+            "id": 10,
+            "title": "Django Models and Database",
+            "items": [
+                {
+                    "definition": "Import model class in models.py",
+                    "code": "from django.db import models"
+                },
+                {
+                    "definition": "Create model class",
+                    "code": "class Person(models.Model):"
+                },
+                {
+                    "definition": "Character Field",
+                    "code": "field_name = models.CharField(max_length=255)"
+                },
+                {
+                    "definition": "Store null and blank values in database",
+                    "code": "field_name = models.CharField(max_length=10, null=True, blank=True)"
+                },
+                {
+                    "definition": "Declare automatic integer field of any size",
+                    "code": "field_name = models.AutoField()"
+                },
+                {
+                    "definition": "Store integer between -2147483648 and 2147483647",
+                    "code": "field_name = models.IntegerField()"
+                },
+                {
+                    "definition": "Like AutoField but only for 64-bit integers",
+                    "code": "field_name = models.BigAutoField()"
+                },
+                {
+                    "definition": "Assign bytes, byte array, or memory view",
+                    "code": "field_name = models.BinaryField()"
+                },
+                {
+                    "definition": "Assign boolean value",
+                    "code": "field_name = models.BooleanField()"
+                },
+                {
+                    "definition": "ForeignKey for model",
+                    "code": "field_name = models.ForeignKey(ModelName, on_delete=models.CASCADE)"
+                },
+                {
+                    "definition": "PositiveIntegerField",
+                    "code": "field_name = models.PositiveIntegerField()"
+                },
+                {
+                    "definition": "TextField for long text input",
+                    "code": "field_name = models.TextField()"
+                },
+                {
+                    "definition": "DateField for date input",
+                    "code": "field_name = models.DateField()"
+                },
+                {
+                    "definition": "DateTimeField for date and time input",
+                    "code": "field_name = models.DateTimeField()"
+                },
+                {
+                    "definition": "Automatically input date and time",
+                    "code": "field_name = models.DateTimeField(auto_now_add=True)"
+                },
+                {
+                    "definition": "Email input",
+                    "code": "field_name = models.EmailField()"
+                },
+                {
+                    "definition": "Use ManyToManyField",
+                    "code": "field_name = models.ForeignKey(User, on_delete=models.CASCADE)"
+                },
+                {
+                    "definition": "Image input",
+                    "code": "field_name = models.ImageField(upload_to='images/')"
+                },
+                {
+                    "definition": "File input",
+                    "code": "field_name = models.FileField(upload_to='files/')"
+                },
+                {
+                    "definition": "URL input",
+                    "code": "field_name = models.URLField()"
+                },
+                {
+                    "definition": "TimeField input",
+                    "code": "field_name = models.TimeField()"
+                },
+                {
+                    "definition": "Decimal number input",
+                    "code": "field_name = models.DecimalField(max_digits=10, decimal_places=2)"
+                },
+                {
+                    "definition": "URL Slug",
+                    "code": "field_name = models.SlugField(unique=True)"
+                }
+            ]
+        },
+        {   
+            "id": 11,
+            "title": "Django Views",
+            "items": [
+               {
+                "definition": "Show all data of an object from database",
+                "code": "ModelName.objects.all()"
+               },
+               {
+                "definition": "Show single data of an object from database",
+                "code": "ModelName.objects.get(id=1)"
+               },
+               {
+                    "definition": "Show filtered objects from database",
+                    "code": "ModelName.objects.filter(field_name=field_value)"
+               },
+               {
+                    "definition": "Order data from database",
+                    "code": "ModelName.objects.all().order_by('field_name')"
+               },
+               {
+                    "definition": "Create objects",
+                    "code": "ModelName.objects.create(field_name=field_value)"
+               },
+               {
+                    "definition": "Check string starts with (__startswith)",
+                    "code": "ModelName.objects.filter(fieldname__startswith=”a”)"
+               },
+               {
+                    "definition": "Check string ends with (__endswith)",
+                    "code": "ModelName.objects.filter(fieldname__endswith=”v”)"
+               },
+               {
+                    "definition": "For case sensitive search",
+                    "code": "ModelName.objects.filter(fieldname__iexact=lorem)"
+               }
+            ]
+        }
+    ]
+}
