@@ -1,0 +1,238 @@
+{  
+    "id": "laravel",
+    "slug": "laravel",
+    "title": "Laravel",
+    "logo": "https://emaillistvalidation.com/blog/content/images/size/w500/2023/10/2560px-Logo.min.svg-1.png",
+    "contents": [
+        {
+            "id": 1,
+            "title": "Installation",
+            "items": [
+                {
+                    "definition": "Install Laravel via Composer",
+                    "code": "composer create-project --prefer-dist laravel/laravel project-name"
+                },
+                {
+                    "definition": "Install Laravel Installer",
+                    "code": "composer global require laravel/installer"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Artisan Commands",
+            "items": [
+                {
+                    "definition": "List all Artisan commands",
+                    "code": "php artisan list"
+                },
+                {
+                    "definition": "Clear application cache",
+                    "code": "php artisan cache:clear"
+                },
+                {
+                    "definition": "Clear route cache",
+                    "code": "php artisan route:clear"
+                },
+                {
+                    "definition": "Clear config cache",
+                    "code": "php artisan config:clear"
+                },
+                {
+                    "definition": "Clear compiled views",
+                    "code": "php artisan view:clear"
+                },
+                {
+                    "definition": "Run database migrations",
+                    "code": "php artisan migrate"
+                },
+                {
+                    "definition": "Rollback the last database migration",
+                    "code": "php artisan migrate:rollback"
+                },
+                {
+                    "definition": "Seed the database",
+                    "code": "php artisan db:seed"
+                },
+                {
+                    "definition": "Create a new Artisan command",
+                    "code": "php artisan make:command CommandName"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Routing",
+            "items": [
+                {
+                    "definition": "Define a basic route",
+                    "code": "Route::get('/example', function () {\n    return 'Hello, World!';\n});"
+                },
+                {
+                    "definition": "Define a route with a controller",
+                    "code": "Route::get('/users', [UserController::class, 'index']);"
+                },
+                {
+                    "definition": "Define a route with a parameter",
+                    "code": "Route::get('/user/{id}', function ($id) {\n    return 'User '.$id;\n});"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Controllers",
+            "items": [
+                {
+                    "definition": "Create a new controller",
+                    "code": "php artisan make:controller UserController"
+                },
+                {
+                    "definition": "Create a resource controller",
+                    "code": "php artisan make:controller UserController --resource"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Models",
+            "items": [
+                {
+                    "definition": "Create a new model",
+                    "code": "php artisan make:model User"
+                },
+                {
+                    "definition": "Create a model with a migration",
+                    "code": "php artisan make:model User -m"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Migrations",
+            "items": [
+                {
+                    "definition": "Create a new migration",
+                    "code": "php artisan make:migration create_users_table"
+                },
+                {
+                    "definition": "Run all outstanding migrations",
+                    "code": "php artisan migrate"
+                },
+                {
+                    "definition": "Rollback the last migration",
+                    "code": "php artisan migrate:rollback"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Factories",
+            "items": [
+                {
+                    "definition": "Create a new factory",
+                    "code": "php artisan make:factory UserFactory"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Seeders",
+            "items": [
+                {
+                    "definition": "Create a new seeder",
+                    "code": "php artisan make:seeder UserSeeder"
+                },
+                {
+                    "definition": "Run the database seeder",
+                    "code": "php artisan db:seed"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Middleware",
+            "items": [
+                {
+                    "definition": "Create a new middleware",
+                    "code": "php artisan make:middleware CheckAge"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "title": "Authentication",
+            "items": [
+                {
+                    "definition": "Install Laravel Breeze for authentication scaffolding",
+                    "code": "composer require laravel/breeze --dev"
+                },
+                {
+                    "definition": "Install Laravel Breeze",
+                    "code": "php artisan breeze:install"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "title": "Testing",
+            "items": [
+                {
+                    "definition": "Run tests",
+                    "code": "php artisan test"
+                },
+                {
+                    "definition": "Create a new test",
+                    "code": "php artisan make:test UserTest"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "title": "Queues",
+            "items": [
+                {
+                    "definition": "Create a new job",
+                    "code": "php artisan make:job SendEmail"
+                },
+                {
+                    "definition": "Run the queue worker",
+                    "code": "php artisan queue:work"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "title": "Events",
+            "items": [
+                {
+                    "definition": "Create a new event",
+                    "code": "php artisan make:event UserRegistered"
+                },
+                {
+                    "definition": "Create a new listener",
+                    "code": "php artisan make:listener SendWelcomeEmail"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "title": "Notifications",
+            "items": [
+                {
+                    "definition": "Create a new notification",
+                    "code": "php artisan make:notification InvoicePaid"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "title": "Mail",
+            "items": [
+                {
+                    "definition": "Create a new mailable",
+                    "code": "php artisan make:mail OrderShipped"
+                }
+            ]
+        }
+    ]
+}
