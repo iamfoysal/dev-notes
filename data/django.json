@@ -3,8 +3,7 @@
     "title": "Django",
     "logo": "https://www.djangoproject.com/m/img/logos/django-logo-negative.png",
     "slug": "django",
-    "description": "Django Cheat Sheet",
-    "colorPref": "#6cc24a",
+    "description": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.",
     "contents": [
         {   
             "id": 1,

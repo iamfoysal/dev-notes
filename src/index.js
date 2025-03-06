@@ -3,7 +3,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const topicSelector = document.getElementById("topicSelector");
     const toggleThemeBtn = document.getElementById("toggleTheme");
 
-    const files = ["django.json", "curl.json", "python.json"];
+    // Add GitHub links
+   const headerControls = document.getElementsByClassName("header-controls")[0];
+   const githubStar = document.createElement("a");
+   githubStar.href = "https://github.com/iamfoysal/dev-notes.git";
+   githubStar.innerText = "⭐ Star";
+   githubStar.target = "_blank";
+   githubStar.rel = "noopener noreferrer";
+   headerControls.appendChild(githubStar);
+
+   const githubEdit = document.createElement("a");
+   githubEdit.href = "https://github.com/iamfoysal/dev-notes/tree/dev/data";
+   githubEdit.innerText = "✏️ Edit";
+   githubEdit.target = "_blank";
+   githubEdit.rel = "noopener noreferrer";
+   headerControls.appendChild(githubEdit);
+
+
+    const files = [
+        "django.json", 
+        "curl.json",
+        "python.json",
+        "laravel.json",
+        "git.json",
+    ];
 
     async function loadTopics() {
         for (let file of files) {
@@ -31,6 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             let response = await fetch(`data/${file}`);
             let data = await response.json();
+            localStorage.setItem("selectedTopic", file);
+            topicSelector.value = file;
 
             cheatSheetContainer.innerHTML = "";
 
@@ -49,6 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
             logo.classList.add("section-header-logo");
             logoWrapper.appendChild(logo);
             sectionHeader.appendChild(logoWrapper);
+            //  add discription  
+            // let description = document.createElement("div");
+            // description.classList.add("description");
+            // description.innerText = data.description;
+            // cheatSheetDiv.appendChild(description);
+            
 
             data.contents.forEach(content => {
                     // content.title show as a header
@@ -91,22 +122,18 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             cheatSheetContainer.appendChild(cheatSheetDiv);
-            //  add file source to add more data on the file 
 
             let source = document.createElement("div");
 
             let paragraph = document.createElement("p");
             paragraph.classList.add("source-paragraph");
             paragraph.innerText = `Help us improve this cheatsheet! If you know any useful ${data.title} commands or tips, feel free to update the source file. Together, we can create a more comprehensive resource! 🚀`;
-
             cheatSheetContainer.appendChild(paragraph);
 
             source.classList.add("source");
             source.innerText = `Source: data/${file}`;
             cheatSheetContainer.appendChild(source);
 
-            //  add a paragraph to show the file source
-            
 
         } catch (error) {
             console.error("Error loading cheat sheet:", error);
@@ -131,7 +158,15 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("dark-mode");
         toggleThemeBtn.innerText = "☀️";
     }
+    // Load initial data from the local storage
+    let selectedTopic = localStorage.getItem("selectedTopic");
+    if (selectedTopic) {
+        loadCheatSheet(selectedTopic);
+    }
+    
+
+
 
     loadTopics();
-    loadCheatSheet(""); // Show welcome message by default
+    loadCheatSheet("");
 });

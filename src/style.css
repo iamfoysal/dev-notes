@@ -1,10 +1,10 @@
 :root {
     --bg-color: #f4f4f4;
     --text-color: #000;
-    --header-bg: #6cc24a;
+    --header-bg: #0068f9;
     --code-bg: #f1f1f1;
-    --btn-bg: #6cc24a;
-    --btn-hover: #5aaa3e;
+    --btn-bg: #0068f9;
+    --btn-hover: #0a5bcc;
     --footer-bg: #222;
 }
 
@@ -57,7 +57,8 @@ header {
     margin-right: 4px;
 }
 .dark-mode .home-link span{
-    background: #6cc24a;
+    /* background: #0068f9;*/
+     background:  var(--btn-hover);
     color: rgb(255, 255, 255);
 }
 h1 {
@@ -72,20 +73,42 @@ h1 {
     border: none;
     cursor: pointer;
 }
+.header-controls button:hover{
+    background: #333;
+}
 
-#toggleTheme {
+.header-controls a{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    background: #000;
+    margin-left: 10px;
+}
+.header-controls a:hover{
+    background: #333;
+}
+.dark-mode .header-controls a{
     background: var(--btn-bg);
+}
+.dark-mode .header-controls a:hover{
+    background: var(--btn-hover);
+}
+#toggleTheme {
+    /* /* background: var(--btn-bg); */
+    background: var(--btn-hover); 
     color: white;
     padding: 5px 10px;
+    /* border: 1px solid #6d616125; */
 }
 
 #toggleTheme:hover {
-    background: var(--btn-hover);
+    background: var(--btn-bg);
 }
 
 #cheatSheetContainer {
     max-width: 80%;
-    margin: 100px auto 20px; /* Adding margin-top to avoid overlap with header */
+    margin: 80px auto 20px; /* Adding margin-top to avoid overlap with header */
     padding: 15px;
     background: white;
     border-radius: 10px;

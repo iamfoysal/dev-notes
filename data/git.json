@@ -1,0 +1,298 @@
+{
+    "id": "git",
+    "slug": "git",
+    "title": "Git & GitHub",
+    "logo": "https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png",
+    "contents": [
+        {
+            "id": 1,
+            "title": "Setup",
+            "items": [
+                {
+                    "definition": "Set your name",
+                    "code": "git config --global user.name 'Your Name'"
+                },
+                {
+                    "definition": "Set your email",
+                    "code": "git config --global user.email 'you@example.com'"
+                },
+                {
+                    "definition": "Check your settings",
+                    "code": "git config --list"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Getting Started",
+            "items": [
+                {
+                    "definition": "Initialize a new Git repository",
+                    "code": "git init"
+                },
+                {
+                    "definition": "Clone an existing repository",
+                    "code": "git clone https://github.com/user/repo.git"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Basic Commands",
+            "items": [
+                {
+                    "definition": "Check the status of your repository",
+                    "code": "git status"
+                },
+                {
+                    "definition": "Add files to staging area",
+                    "code": "git add ."
+                },
+                {
+                    "definition": "Commit changes",
+                    "code": "git commit -m 'Commit message'"
+                },
+                {
+                    "definition": "Push changes to remote repository",
+                    "code": "git push origin main"
+                },
+                {
+                    "definition": "Pull changes from remote repository",
+                    "code": "git pull origin main"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Branching",
+            "items": [
+                {
+                    "definition": "List all branches",
+                    "code": "git branch"
+                },
+                {
+                    "definition": "Create a new branch",
+                    "code": "git branch new-branch"
+                },
+                {
+                    "definition": "Switch to a branch",
+                    "code": "git checkout new-branch"
+                },
+                {
+                    "definition": "Create and switch to a new branch",
+                    "code": "git checkout -b new-branch"
+                },
+                {
+                    "definition": "Merge a branch into the current branch",
+                    "code": "git merge new-branch"
+                },
+                {
+                    "definition": "Delete a branch",
+                    "code": "git branch -d new-branch"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Remote Repositories",
+            "items": [
+                {
+                    "definition": "Add a remote repository",
+                    "code": "git remote add origin https://github.com/user/repo.git"
+                },
+                {
+                    "definition": "List all remote repositories",
+                    "code": "git remote -v"
+                },
+                {
+                    "definition": "Remove a remote repository",
+                    "code": "git remote remove origin"
+                },
+                {
+                    "definition": "Rename a remote repository",
+                    "code": "git remote rename origin new-origin"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Stashing",
+            "items": [
+                {
+                    "definition": "Stash changes",
+                    "code": "git stash"
+                },
+                {
+                    "definition": "List all stashes",
+                    "code": "git stash list"
+                },
+                {
+                    "definition": "Apply the latest stash",
+                    "code": "git stash apply"
+                },
+                {
+                    "definition": "Apply a specific stash",
+                    "code": "git stash apply stash@{2}"
+                },
+                {
+                    "definition": "Drop the latest stash",
+                    "code": "git stash drop"
+                },
+                {
+                    "definition": "Drop a specific stash",
+                    "code": "git stash drop stash@{2}"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Logs",
+            "items": [
+                {
+                    "definition": "Show commit logs",
+                    "code": "git log"
+                },
+                {
+                    "definition": "Show commit logs with one line per commit",
+                    "code": "git log --oneline"
+                },
+                {
+                    "definition": "Show commit logs with graph",
+                    "code": "git log --graph"
+                },
+                {
+                    "definition": "Show commit logs for a specific file",
+                    "code": "git log -- path/to/file"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Diff",
+            "items": [
+                {
+                    "definition": "Show changes in the working directory",
+                    "code": "git diff"
+                },
+                {
+                    "definition": "Show changes between commits",
+                    "code": "git diff commit1 commit2"
+                },
+                {
+                    "definition": "Show changes for a specific file",
+                    "code": "git diff -- path/to/file"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Tagging",
+            "items": [
+                {
+                    "definition": "List all tags",
+                    "code": "git tag"
+                },
+                {
+                    "definition": "Create a new tag",
+                    "code": "git tag v1.0.0"
+                },
+                {
+                    "definition": "Create a new tag with a message",
+                    "code": "git tag -a v1.0.0 -m 'Version 1.0.0'"
+                },
+                {
+                    "definition": "Push tags to remote repository",
+                    "code": "git push origin --tags"
+                },
+                {
+                    "definition": "Delete a tag",
+                    "code": "git tag -d v1.0.0"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "title": "Rebasing",
+            "items": [
+                {
+                    "definition": "Rebase the current branch onto another branch",
+                    "code": "git rebase branch-name"
+                },
+                {
+                    "definition": "Continue rebasing after resolving conflicts",
+                    "code": "git rebase --continue"
+                },
+                {
+                    "definition": "Skip the current commit during a rebase",
+                    "code": "git rebase --skip"
+                },
+                {
+                    "definition": "Abort a rebase",
+                    "code": "git rebase --abort"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "title": "Resetting",
+            "items": [
+                {
+                    "definition": "Soft reset (keep changes in working directory)",
+                    "code": "git reset --soft HEAD~1"
+                },
+                {
+                    "definition": "Mixed reset (keep changes in working directory, unstage changes)",
+                    "code": "git reset --mixed HEAD~1"
+                },
+                {
+                    "definition": "Hard reset (discard changes in working directory)",
+                    "code": "git reset --hard HEAD~1"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "title": "Cherry-picking",
+            "items": [
+                {
+                    "definition": "Cherry-pick a commit",
+                    "code": "git cherry-pick commit-hash"
+                },
+                {
+                    "definition": "Continue cherry-picking after resolving conflicts",
+                    "code": "git cherry-pick --continue"
+                },
+                {
+                    "definition": "Abort a cherry-pick",
+                    "code": "git cherry-pick --abort"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "title": "GitHub",
+            "items": [
+                {
+                    "definition": "Fork a repository",
+                    "code": "Go to the repository on GitHub and click 'Fork'"
+                },
+                {
+                    "definition": "Create a pull request",
+                    "code": "Go to the repository on GitHub and click 'New pull request'"
+                },
+                {
+                    "definition": "Merge a pull request",
+                    "code": "Go to the repository on GitHub and click 'Merge pull request'"
+                },
+                {
+                    "definition": "Create a new repository",
+                    "code": "Go to GitHub and click 'New repository'"
+                },
+                {
+                    "definition": "Delete a repository",
+                    "code": "Go to the repository on GitHub, click 'Settings', scroll down and click 'Delete this repository'"
+                }
+            ]
+        }
+    ]
+}

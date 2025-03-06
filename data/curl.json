@@ -4,7 +4,6 @@
     "slug": "curl",
     "logo": "https://curl.se/logo/curl-logo.svg",
     "description": "CURL is a computer software project that provides a library and command-line tool for transferring data using various network protocols. CURL stands for 'Client URL'.",
-    "colorPref": "#07334e",
     "contents": [
         {
             "id": 1,
