@@ -1,236 +1,264 @@
-{  
-    "id": "laravel",
-    "slug": "laravel",
-    "title": "Laravel",
-    "logo": "https://emaillistvalidation.com/blog/content/images/size/w500/2023/10/2560px-Logo.min.svg-1.png",
+{
+    "id": "angular",
+    "slug": "angular",
+    "title": "Angular",
+    "logo": "https://angular.io/assets/images/logos/angular/angular.svg",
     "contents": [
         {
             "id": 1,
             "title": "Installation",
             "items": [
                 {
-                    "definition": "Install Laravel via Composer",
-                    "code": "composer create-project --prefer-dist laravel/laravel project-name"
+                    "definition": "Install Angular CLI",
+                    "code": "npm install -g @angular/cli"
                 },
                 {
-                    "definition": "Install Laravel Installer",
-                    "code": "composer global require laravel/installer"
+                    "definition": "Create a new Angular project",
+                    "code": "ng new project-name"
                 }
             ]
         },
         {
             "id": 2,
-            "title": "Artisan Commands",
+            "title": "Development Server",
             "items": [
                 {
-                    "definition": "List all Artisan commands",
-                    "code": "php artisan list"
+                    "definition": "Serve the Angular application",
+                    "code": "ng serve"
                 },
                 {
-                    "definition": "Clear application cache",
-                    "code": "php artisan cache:clear"
-                },
-                {
-                    "definition": "Clear route cache",
-                    "code": "php artisan route:clear"
-                },
-                {
-                    "definition": "Clear config cache",
-                    "code": "php artisan config:clear"
-                },
-                {
-                    "definition": "Clear compiled views",
-                    "code": "php artisan view:clear"
-                },
-                {
-                    "definition": "Run database migrations",
-                    "code": "php artisan migrate"
-                },
-                {
-                    "definition": "Rollback the last database migration",
-                    "code": "php artisan migrate:rollback"
-                },
-                {
-                    "definition": "Seed the database",
-                    "code": "php artisan db:seed"
-                },
-                {
-                    "definition": "Create a new Artisan command",
-                    "code": "php artisan make:command CommandName"
+                    "definition": "Serve the Angular application and open in browser",
+                    "code": "ng serve -o"
                 }
             ]
         },
         {
             "id": 3,
-            "title": "Routing",
+            "title": "Components",
             "items": [
                 {
-                    "definition": "Define a basic route",
-                    "code": "Route::get('/example', function () {\n    return 'Hello, World!';\n});"
+                    "definition": "Create a new component",
+                    "code": "ng generate component component-name"
                 },
                 {
-                    "definition": "Define a route with a controller",
-                    "code": "Route::get('/users', [UserController::class, 'index']);"
-                },
-                {
-                    "definition": "Define a route with a parameter",
-                    "code": "Route::get('/user/{id}', function ($id) {\n    return 'User '.$id;\n});"
+                    "definition": "Create a component with inline styles and templates",
+                    "code": "ng generate component component-name --inline-style --inline-template"
                 }
             ]
         },
         {
             "id": 4,
-            "title": "Controllers",
+            "title": "Services",
             "items": [
                 {
-                    "definition": "Create a new controller",
-                    "code": "php artisan make:controller UserController"
-                },
-                {
-                    "definition": "Create a resource controller",
-                    "code": "php artisan make:controller UserController --resource"
+                    "definition": "Create a new service",
+                    "code": "ng generate service service-name"
                 }
             ]
         },
         {
             "id": 5,
-            "title": "Models",
+            "title": "Modules",
             "items": [
                 {
-                    "definition": "Create a new model",
-                    "code": "php artisan make:model User"
-                },
-                {
-                    "definition": "Create a model with a migration",
-                    "code": "php artisan make:model User -m"
+                    "definition": "Create a new module",
+                    "code": "ng generate module module-name"
                 }
             ]
         },
         {
             "id": 6,
-            "title": "Migrations",
+            "title": "Directives",
             "items": [
                 {
-                    "definition": "Create a new migration",
-                    "code": "php artisan make:migration create_users_table"
-                },
-                {
-                    "definition": "Run all outstanding migrations",
-                    "code": "php artisan migrate"
-                },
-                {
-                    "definition": "Rollback the last migration",
-                    "code": "php artisan migrate:rollback"
+                    "definition": "Create a new directive",
+                    "code": "ng generate directive directive-name"
                 }
             ]
         },
         {
             "id": 7,
-            "title": "Factories",
+            "title": "Pipes",
             "items": [
                 {
-                    "definition": "Create a new factory",
-                    "code": "php artisan make:factory UserFactory"
+                    "definition": "Create a new pipe",
+                    "code": "ng generate pipe pipe-name"
                 }
             ]
         },
         {
             "id": 8,
-            "title": "Seeders",
+            "title": "Routing",
             "items": [
                 {
-                    "definition": "Create a new seeder",
-                    "code": "php artisan make:seeder UserSeeder"
+                    "definition": "Create a new route module",
+                    "code": "ng generate module app-routing --flat --module=app"
                 },
                 {
-                    "definition": "Run the database seeder",
-                    "code": "php artisan db:seed"
+                    "definition": "Define a route with a component",
+                    "code": "const routes: Routes = [{ path: 'home', component: HomeComponent }];"
+                },
+                {
+                    "definition": "Define a route with lazy loading",
+                    "code": "const routes: Routes = [{ path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) }];"
+                },
+                {
+                    "definition": "Navigate to a route programmatically",
+                    "code": "this.router.navigate(['/home']);"
                 }
             ]
         },
         {
             "id": 9,
-            "title": "Middleware",
+            "title": "Services & Dependency Injection",
             "items": [
                 {
-                    "definition": "Create a new middleware",
-                    "code": "php artisan make:middleware CheckAge"
+                    "definition": "Inject a service into a component",
+                    "code": "constructor(private service: ServiceName) {}"
                 }
             ]
         },
         {
             "id": 10,
-            "title": "Authentication",
+            "title": "Forms",
             "items": [
                 {
-                    "definition": "Install Laravel Breeze for authentication scaffolding",
-                    "code": "composer require laravel/breeze --dev"
+                    "definition": "Create a reactive form",
+                    "code": "this.form = this.fb.group({ name: ['', Validators.required] });"
                 },
                 {
-                    "definition": "Install Laravel Breeze",
-                    "code": "php artisan breeze:install"
+                    "definition": "Create a template-driven form",
+                    "code": "<form #f='ngForm'><input ngModel name='name' required></form>"
                 }
             ]
         },
         {
             "id": 11,
-            "title": "Testing",
+            "title": "Http Client",
             "items": [
                 {
-                    "definition": "Run tests",
-                    "code": "php artisan test"
+                    "definition": "Make an HTTP GET request",
+                    "code": "this.http.get('https://api.example.com').subscribe(data => console.log(data));"
                 },
                 {
-                    "definition": "Create a new test",
-                    "code": "php artisan make:test UserTest"
+                    "definition": "Make an HTTP POST request",
+                    "code": "this.http.post('https://api.example.com', data).subscribe(response => console.log(response));"
                 }
             ]
         },
         {
             "id": 12,
-            "title": "Queues",
+            "title": "Testing",
             "items": [
                 {
-                    "definition": "Create a new job",
-                    "code": "php artisan make:job SendEmail"
+                    "definition": "Run unit tests",
+                    "code": "ng test"
                 },
                 {
-                    "definition": "Run the queue worker",
-                    "code": "php artisan queue:work"
+                    "definition": "Create a new test for a component",
+                    "code": "ng generate component component-name --spec"
                 }
             ]
         },
         {
             "id": 13,
-            "title": "Events",
+            "title": "Build & Deployment",
             "items": [
                 {
-                    "definition": "Create a new event",
-                    "code": "php artisan make:event UserRegistered"
+                    "definition": "Build the Angular project for production",
+                    "code": "ng build --prod"
                 },
                 {
-                    "definition": "Create a new listener",
-                    "code": "php artisan make:listener SendWelcomeEmail"
+                    "definition": "Serve the Angular project for production",
+                    "code": "ng serve --prod"
                 }
             ]
         },
         {
             "id": 14,
-            "title": "Notifications",
+            "title": "RxJS",
             "items": [
                 {
-                    "definition": "Create a new notification",
-                    "code": "php artisan make:notification InvoicePaid"
+                    "definition": "Import RxJS operators",
+                    "code": "import { map, catchError } from 'rxjs/operators';"
+                },
+                {
+                    "definition": "Create an observable",
+                    "code": "const observable = new Observable(observer => { observer.next('Hello'); observer.complete(); });"
+                },
+                {
+                    "definition": "Subscribe to an observable",
+                    "code": "observable.subscribe(data => console.log(data));"
+                },
+                {
+                    "definition": "Use the 'map' operator",
+                    "code": "observable.pipe(map(data => data.toUpperCase())).subscribe(data => console.log(data));"
+                },
+                {
+                    "definition": "Handle errors with 'catchError'",
+                    "code": "observable.pipe(catchError(error => of('Error occurred!'))).subscribe(data => console.log(data));"
+                },
+                {
+                    "definition": "Use 'mergeMap' for flattening observables",
+                    "code": "observable.pipe(mergeMap(data => anotherObservable)).subscribe(data => console.log(data));"
+                },
+                {
+                    "definition": "Combine multiple observables with 'combineLatest'",
+                    "code": "combineLatest([observable1, observable2]).subscribe(([data1, data2]) => { console.log(data1, data2); });"
+                },
+                {
+                    "definition": "Create a Subject",
+                    "code": "const subject = new Subject();"
+                },
+                {
+                    "definition": "Emit values using Subject",
+                    "code": "subject.next('Hello');"
+                },
+                {
+                    "definition": "Use 'BehaviorSubject' for state management",
+                    "code": "const behaviorSubject = new BehaviorSubject('Initial State');"
                 }
             ]
         },
         {
             "id": 15,
-            "title": "Mail",
+            "title": "NgRx",
             "items": [
                 {
-                    "definition": "Create a new mailable",
-                    "code": "php artisan make:mail OrderShipped"
+                    "definition": "Install NgRx Store",
+                    "code": "ng add @ngrx/store"
+                },
+                {
+                    "definition": "Create a state for a feature",
+                    "code": "ng generate store feature --module app.module.ts"
+                },
+                {
+                    "definition": "Create a reducer",
+                    "code": "ng generate reducer feature"
+                },
+                {
+                    "definition": "Create actions",
+                    "code": "ng generate action feature/feature-action"
+                },
+                {
+                    "definition": "Create effects",
+                    "code": "ng generate effect feature/feature-effect"
+                },
+                {
+                    "definition": "Dispatch an action",
+                    "code": "this.store.dispatch(actionName());"
+                },
+                {
+                    "definition": "Select a state from the store",
+                    "code": "this.store.select(state => state.feature).subscribe(data => console.log(data));"
+                },
+                {
+                    "definition": "Inject Store in a component",
+                    "code": "constructor(private store: Store<AppState>) {}"
+                },
+                {
+                    "definition": "Use a selector to get data",
+                    "code": "const featureState = this.store.select(selectFeature);"
                 }
             ]
         }
