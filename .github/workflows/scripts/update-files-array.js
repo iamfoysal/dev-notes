@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 // Path to the data directory
-const dataDir = path.join(__dirname, '../../data');
+const dataDir = path.join(__dirname, '../../../data');
 
 // Path to the index.js file
-const indexFilePath = path.join(__dirname, '../../src/index.js');
+const indexFilePath = path.join(__dirname, '../../../src/index.js');
 
 // Read all .json files in the data directory
 const dataFiles = fs.readdirSync(dataDir).filter(file => file.endsWith('.json'));
