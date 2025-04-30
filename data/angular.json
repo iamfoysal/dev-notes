@@ -312,11 +312,71 @@
           "id": 9,
           "title": "Services & Dependency Injection",
           "items": [
-              {
-                  "definition": "Inject a service into a component",
-                  "code": "constructor(private service: ServiceName) {}"
-              }
-          ]
+            {
+                "definition": "Inject a service into a component",
+                "code": "constructor(private service: ServiceName) {}"
+            },
+            {
+                "definition": "Inject a service into another service",
+                "code": "constructor(private service: ServiceName) {}"
+            },
+            {
+                "definition": "Inject a service into a directive",
+                "code": "constructor(private service: ServiceName) {}"
+            },
+            {
+                "definition": "Inject a service into a pipe",
+                "code": "constructor(private service: ServiceName) {}"
+            },
+            {
+                "definition": "Inject multiple services into a component",
+                "code": "constructor(private serviceA: ServiceA, private serviceB: ServiceB) {}"
+            },
+            {
+                "definition": "Inject a service with a specific provider",
+                "code": "constructor(@Inject(SomeToken) private service: ServiceName) {}"
+            },
+            {
+                "definition": "Use `providedIn` to make a service available globally",
+                "code": "@Injectable({ providedIn: 'root' })\nexport class ServiceName { }"
+            },
+            {
+                "definition": "Provide a service at the module level",
+                "code": "@NgModule({ providers: [ServiceName] })\nexport class FeatureModule { }"
+            },
+            {
+                "definition": "Use `useClass` to provide a service with a specific class",
+                "code": "providers: [{ provide: ServiceName, useClass: CustomService }] "
+            },
+            {
+                "definition": "Use `useFactory` to provide a service using a factory function",
+                "code": "providers: [{ provide: ServiceName, useFactory: (config) => new ServiceName(config), deps: [ConfigService] }] "
+            },
+            {
+                "definition": "Use `useValue` to provide a service with a specific value",
+                "code": "providers: [{ provide: ServiceName, useValue: { apiUrl: 'http://example.com' } }] "
+            },
+            {
+                "definition": "Inject a service into a constructor using a parameterized provider",
+                "code": "constructor(@Inject(MY_TOKEN) private service: ServiceName) {}"
+            },
+            {
+                "definition": "Inject a service asynchronously with `async` pipe",
+                "code": "<div *ngIf='service$ | async as service'>{{ service.data }}</div>"
+            },
+            {
+                "definition": "Create a service with a constructor that takes parameters",
+                "code": "@Injectable({ providedIn: 'root' })\nexport class ApiService {\n  constructor(private http: HttpClient, private config: ConfigService) {}\n}"
+            },
+            {
+                "definition": "Use a service with an observable pattern",
+                "code": "this.apiService.getData().subscribe(data => console.log(data));"
+            },
+            {
+                "definition": "Provide a service at the component level",
+                "code": "@Component({\n  providers: [ServiceName]\n})"
+            }
+        ]
       },
       {
           "id": 10,
