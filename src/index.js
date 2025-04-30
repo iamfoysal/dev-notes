@@ -20,8 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
   headerControls.appendChild(githubEdit);
 
   const files = [
-    "django.json",
+    "ubuntu.json",
     "curl.json",
+    "django.json",
     "python.json",
     "laravel.json",
     "git.json",

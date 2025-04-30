@@ -1,0 +1,196 @@
+{
+    "id": "ubuntu",
+    "slug": "ubuntu",
+    "title": "Ubuntu",
+    "logo": "https://1000logos.net/wp-content/uploads/2023/04/Ubuntu-logo.png",
+    "contents": [
+        {
+            "id": 1,
+            "title": "Setup",
+            "items": [
+                {
+                    "definition": "Update package lists",
+                    "code": "sudo apt update"
+                },
+                {
+                    "definition": "Upgrade installed packages",
+                    "code": "sudo apt upgrade"
+                },
+                {
+                    "definition": "Install a package",
+                    "code": "sudo apt install package-name"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "File Management",
+            "items": [
+                {
+                    "definition": "List files in a directory",
+                    "code": "ls"
+                },
+                {
+                    "definition": "Copy a file",
+                    "code": "cp source-file destination-file"
+                },
+                {
+                    "definition": "Move or rename a file",
+                    "code": "mv source-file destination-file"
+                },
+                {
+                    "definition": "Delete a file",
+                    "code": "rm file-name"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "User Management",
+            "items": [
+                {
+                    "definition": "Add a new user",
+                    "code": "sudo adduser username"
+                },
+                {
+                    "definition": "Delete a user",
+                    "code": "sudo deluser username"
+                },
+                {
+                    "definition": "Switch to another user",
+                    "code": "su username"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Networking",
+            "items": [
+                {
+                    "definition": "Check network configuration",
+                    "code": "ifconfig"
+                },
+                {
+                    "definition": "Ping a host",
+                    "code": "ping host-name"
+                },
+                {
+                    "definition": "Check open ports",
+                    "code": "sudo netstat -tuln"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "System Monitoring",
+            "items": [
+                {
+                    "definition": "Check system resource usage",
+                    "code": "top"
+                },
+                {
+                    "definition": "Check disk usage",
+                    "code": "df -h"
+                },
+                {
+                    "definition": "Check memory usage",
+                    "code": "free -h"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Process Management",
+            "items": [
+                {
+                    "definition": "List running processes",
+                    "code": "ps aux"
+                },
+                {
+                    "definition": "Kill a process by PID",
+                    "code": "kill PID"
+                },
+                {
+                    "definition": "Kill a process by name",
+                    "code": "pkill process-name"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Permissions",
+            "items": [
+                {
+                    "definition": "Change file permissions",
+                    "code": "chmod permissions file-name"
+                },
+                {
+                    "definition": "Change file ownership",
+                    "code": "chown user:group file-name"
+                },
+                {
+                    "definition": "Check file permissions",
+                    "code": "ls -l file-name"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Package Management",
+            "items": [
+                {
+                    "definition": "Search for a package",
+                    "code": "apt search package-name"
+                },
+                {
+                    "definition": "Remove a package",
+                    "code": "sudo apt remove package-name"
+                },
+                {
+                    "definition": "Clean up unused packages",
+                    "code": "sudo apt autoremove"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "title": "System Information",
+            "items": [
+                {
+                    "definition": "Check system information",
+                    "code": "uname -a"
+                },
+                {
+                    "definition": "Check kernel version",
+                    "code": "uname -r"
+                },
+                {
+                    "definition": "Check system uptime",
+                    "code": "uptime"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "title": "Archiving and Compression",
+            "items": [
+                {
+                    "definition": "Create a tar archive",
+                    "code": "tar -cvf archive-name.tar file-name"
+                },
+                {
+                    "definition": "Extract a tar archive",
+                    "code": "tar -xvf archive-name.tar"
+                },
+                {
+                    "definition": "Compress a file using gzip",
+                    "code": "gzip file-name"
+                },
+                {
+                    "definition": "Decompress a gzip file",
+                    "code": "gunzip file-name.gz"
+                }
+            ]
+        }
+    ]
+}
