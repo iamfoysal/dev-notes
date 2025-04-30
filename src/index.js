@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "python.json",
     "laravel.json",
     "git.json",
-    "angular.json",
   ];
 
   async function loadTopics() {

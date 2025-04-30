@@ -8,14 +8,42 @@
           "id": 1,
           "title": "Installation",
           "items": [
-              {
-                  "definition": "Install Angular CLI",
-                  "code": "npm install -g @angular/cli"
-              },
-              {
-                  "definition": "Create a new Angular project",
-                  "code": "ng new project-name"
-              }
+            {
+              "definition": "Install Angular CLI globally",
+              "code": "npm install -g @angular/cli"
+          },
+          {
+              "definition": "Verify Angular CLI installation",
+              "code": "ng --version"
+          },
+          {
+              "definition": "Create a new Angular project",
+              "code": "ng new project-name"
+          },
+          {
+              "definition": "Create a new Angular project with routing enabled",
+              "code": "ng new project-name --routing"
+          },
+          {
+              "definition": "Create a new Angular project with SCSS styles",
+              "code": "ng new project-name --style=scss"
+          },
+          {
+              "definition": "Install project dependencies after creating a new project",
+              "code": "npm install"
+          },
+          {
+            "definition": "Install additional dependencies for Angular project",
+            "code": "npm install <package-name>"
+        },
+        {
+            "definition": "Install Angular Material",
+            "code": "ng add @angular/material"
+        },
+        {
+            "definition": "Install Angular Animations",
+            "code": "npm install @angular/animations"
+        }
           ]
       },
       {
@@ -37,55 +65,227 @@
           "title": "Components",
           "items": [
               {
-                  "definition": "Create a new component",
-                  "code": "ng generate component component-name"
+                 "definition": "Create a new component",
+                 "code": "ng generate component component-name"
               },
               {
                   "definition": "Create a component with inline styles and templates",
                   "code": "ng generate component component-name --inline-style --inline-template"
+              },
+              {
+                  "definition": "Create a component with routing",
+                  "code": "ng generate component component-name --module app-routing"
+              },
+              {
+                  "definition": "Add a lifecycle hook to a component",
+                  "code": "ng generate lifecycle OnInit --skipTests"
+              },
+              {
+                  "definition": "Create a component with encapsulated styles",
+                  "code": "ng generate component component-name --style=scss"
+              },
+              {
+                  "definition": "Add a template reference variable to a component",
+                  "code": "<app-component #ref></app-component>"
+              },
+              {
+                  "definition": "Access component template reference",
+                  "code": "const ref = this.viewChild('ref');"
+              },
+              {
+                  "definition": "Use `ngOnChanges` lifecycle hook",
+                  "code": "ngOnChanges(changes: SimpleChanges) { console.log(changes); }"
+              },
+              {
+                  "definition": "Create a dynamic component with ViewContainerRef",
+                  "code": "this.viewContainerRef.createComponent(ComponentFactory);"
               }
           ]
       },
       {
-          "id": 4,
-          "title": "Services",
-          "items": [
-              {
-                  "definition": "Create a new service",
-                  "code": "ng generate service service-name"
-              }
-          ]
+        "id": 4,
+        "title": "Services",
+        "items": [
+            {
+                "definition": "Create a new service",
+                "code": "ng generate service service-name"
+            },
+            {
+                "definition": "Create a service with a specific module",
+                "code": "ng generate service service-name --module app.module.ts"
+            },
+            {
+                "definition": "Inject a service into a component",
+                "code": "import { ServiceName } from './service-name.service';\nconstructor(private service: ServiceName) {}"
+            },
+            {
+                "definition": "Create a service with providedIn root (singleton)",
+                "code": "@Injectable({ providedIn: 'root' })\nexport class ServiceName { }"
+            },
+            {
+                "definition": "Create a service with a specified providedIn module",
+                "code": "@Injectable({ providedIn: 'FeatureModule' })\nexport class ServiceName { }"
+            },
+            {
+                "definition": "Use HttpClient in a service",
+                "code": "import { HttpClient } from '@angular/common/http';\n@Injectable({ providedIn: 'root' })\nexport class ApiService {\n  constructor(private http: HttpClient) {}\n  getData() {\n    return this.http.get('https://api.example.com/data');\n  }\n}"
+            },
+            {
+                "definition": "Call service method in a component",
+                "code": "this.apiService.getData().subscribe(data => console.log(data));"
+            },
+            {
+                "definition": "Use service with Observable",
+                "code": "import { Observable } from 'rxjs';\n@Injectable({ providedIn: 'root' })\nexport class ApiService {\n  constructor(private http: HttpClient) {}\n  getData(): Observable<any> {\n    return this.http.get('https://api.example.com/data');\n  }\n}"
+            },
+            {
+                "definition": "Create a service with a method to post data",
+                "code": "postData(data: any) {\n  return this.http.post('https://api.example.com/data', data);\n}"
+            },
+            {
+                "definition": "Use Angular's DI system in a service",
+                "code": "constructor(@Inject(SomeToken) private value: Type) {}"
+            },
+            {
+                "definition": "Provide a service at the module level",
+                "code": "@NgModule({ providers: [ServiceName] })\nexport class FeatureModule { }"
+            },
+            {
+                "definition": "Use a service in a lazy-loaded module",
+                "code": "@Injectable({ providedIn: 'FeatureModule' })\nexport class LazyService { }"
+            }
+        ]
       },
       {
           "id": 5,
           "title": "Modules",
           "items": [
-              {
-                  "definition": "Create a new module",
-                  "code": "ng generate module module-name"
-              }
+            {
+                "definition": "Create a new module",
+                "code": "ng generate module module-name"
+            },
+            {
+                "definition": "Create a module with routing",
+                "code": "ng generate module module-name --routing"
+            },
+            {
+                "definition": "Add a module to `app.module.ts`",
+                "code": "import { ModuleNameModule } from './module-name/module-name.module';"
+            },
+            {
+                "definition": "Lazy load a module in routing",
+                "code": "const routes: Routes = [{ path: 'feature', loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule) }];"
+            },
+            {
+                "definition": "Import another module in the current module",
+                "code": "import { CommonModule } from '@angular/common';"
+            },
+            {
+                "definition": "Import `FormsModule` for template-driven forms",
+                "code": "import { FormsModule } from '@angular/forms';"
+            },
+            {
+                "definition": "Import `ReactiveFormsModule` for reactive forms",
+                "code": "import { ReactiveFormsModule } from '@angular/forms';"
+            },
+            {
+                "definition": "Import a feature module in the root module",
+                "code": "import { FeatureModule } from './feature/feature.module';"
+            },
+            {
+                "definition": "Use `@NgModule` decorator to declare components, services, and imports",
+                "code": "@NgModule({ declarations: [AppComponent], imports: [BrowserModule, FeatureModule], providers: [ServiceName], bootstrap: [AppComponent] })"
+            }
           ]
       },
       {
-          "id": 6,
-          "title": "Directives",
-          "items": [
-              {
-                  "definition": "Create a new directive",
-                  "code": "ng generate directive directive-name"
-              }
-          ]
+        "id": 6,
+        "title": "Directives",
+        "items": [
+            {
+                "definition": "Create a new directive",
+                "code": "ng generate directive directive-name"
+            },
+            {
+                "definition": "Create a directive with a specific module",
+                "code": "ng generate directive directive-name --module app.module.ts"
+            },
+            {
+                "definition": "Create an attribute directive",
+                "code": "import { Directive, ElementRef, Renderer2 } from '@angular/core';\n@Directive({ selector: '[appHighlight]' })\nexport class HighlightDirective {\n  constructor(private el: ElementRef, private renderer: Renderer2) {\n    this.renderer.setStyle(this.el.nativeElement, 'background-color', 'yellow');\n  }\n}"
+            },
+            {
+                "definition": "Use an attribute directive in a template",
+                "code": "<div appHighlight>Highlighted text</div>"
+            },
+            {
+                "definition": "Create a structural directive",
+                "code": "import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';\n@Directive({ selector: '[appUnless]' })\nexport class UnlessDirective {\n  @Input() set appUnless(condition: boolean) {\n    if (!condition) {\n      this.viewContainer.createEmbeddedView(this.templateRef);\n    } else {\n      this.viewContainer.clear();\n    }\n  }\n  constructor(private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef) {}\n}"
+            },
+            {
+                "definition": "Use a structural directive in a template",
+                "code": "<div *appUnless='condition'>This will be shown if condition is false</div>"
+            },
+            {
+                "definition": "Create a custom directive that modifies DOM elements",
+                "code": "import { Directive, ElementRef, HostListener } from '@angular/core';\n@Directive({ selector: '[appColor]' })\nexport class ColorDirective {\n  constructor(private el: ElementRef) {}\n  @HostListener('mouseenter') onMouseEnter() {\n    this.el.nativeElement.style.color = 'blue';\n  }\n  @HostListener('mouseleave') onMouseLeave() {\n    this.el.nativeElement.style.color = 'black';\n  }\n}"
+            },
+            {
+                "definition": "Use a custom directive to change text color on mouse events",
+                "code": "<p appColor>Hover over me to change my color!</p>"
+            },
+            {
+                "definition": "Create a directive with a host binding",
+                "code": "import { Directive, HostBinding } from '@angular/core';\n@Directive({ selector: '[appBgColor]' })\nexport class BgColorDirective {\n  @HostBinding('style.backgroundColor') backgroundColor: string = 'yellow';\n}"
+            },
+            {
+                "definition": "Use a directive with a host binding",
+                "code": "<div appBgColor>Background color changed by directive</div>"
+            }
+        ]
       },
       {
-          "id": 7,
-          "title": "Pipes",
-          "items": [
-              {
-                  "definition": "Create a new pipe",
-                  "code": "ng generate pipe pipe-name"
-              }
-          ]
-      },
+        "id": 7,
+        "title": "Pipes",
+        "items": [
+            {
+                "definition": "Create a new pipe",
+                "code": "ng generate pipe pipe-name"
+            },
+            {
+                "definition": "Create a pipe with a specific module",
+                "code": "ng generate pipe pipe-name --module app.module.ts"
+            },
+            {
+                "definition": "Use a pipe in a component template",
+                "code": "{{ value | pipeName }}"
+            },
+            {
+                "definition": "Create a custom pipe with transform method",
+                "code": "import { Pipe, PipeTransform } from '@angular/core';\n@Pipe({ name: 'customPipe' })\nexport class CustomPipe implements PipeTransform {\n  transform(value: any): any {\n    return value.toUpperCase();\n  }\n}"
+            },
+            {
+                "definition": "Use a custom pipe in a component template",
+                "code": "{{ 'hello world' | customPipe }}"
+            },
+            {
+                "definition": "Create a pipe that accepts arguments",
+                "code": "import { Pipe, PipeTransform } from '@angular/core';\n@Pipe({ name: 'slice' })\nexport class SlicePipe implements PipeTransform {\n  transform(value: string, start: number, end: number): string {\n    return value.slice(start, end);\n  }\n}"
+            },
+            {
+                "definition": "Use a pipe with arguments in a component template",
+                "code": "{{ 'Hello, Angular!' | slice:0:5 }}"
+            },
+            {
+                "definition": "Create a pure pipe",
+                "code": "@Pipe({ name: 'purePipe', pure: true })"
+            },
+            {
+                "definition": "Create an impure pipe",
+                "code": "@Pipe({ name: 'impurePipe', pure: false })"
+            }
+        ]
+    },
       {
           "id": 8,
           "title": "Routing",
@@ -122,15 +322,67 @@
           "id": 10,
           "title": "Forms",
           "items": [
-              {
-                  "definition": "Create a reactive form",
-                  "code": "this.form = this.fb.group({ name: ['', Validators.required] });"
-              },
-              {
-                  "definition": "Create a template-driven form",
-                  "code": "<form #f='ngForm'><input ngModel name='name' required></form>"
-              }
-          ]
+            {
+                "definition": "Create a reactive form",
+                "code": "this.form = this.fb.group({ name: ['', Validators.required] });"
+            },
+            {
+                "definition": "Create a template-driven form",
+                "code": "<form #f='ngForm'><input ngModel name='name' required></form>"
+            },
+            {
+                "definition": "Create a form group in reactive forms",
+                "code": "this.formGroup = this.fb.group({ name: ['John Doe'], email: ['john.doe@example.com'] });"
+            },
+            {
+                "definition": "Add form validation to a reactive form",
+                "code": "this.form = this.fb.group({\n  name: ['', [Validators.required, Validators.minLength(4)]],\n  email: ['', [Validators.required, Validators.email]]\n});"
+            },
+            {
+                "definition": "Get form value in reactive form",
+                "code": "console.log(this.form.value);"
+            },
+            {
+                "definition": "Check if a form control is valid",
+                "code": "if (this.form.valid) { console.log('Form is valid'); }"
+            },
+            {
+                "definition": "Reset a reactive form",
+                "code": "this.form.reset();"
+            },
+            {
+                "definition": "Create a custom validator in reactive form",
+                "code": "export function customValidator(control: AbstractControl) { return control.value === 'angular' ? null : { invalid: true }; }"
+            },
+            {
+                "definition": "Create a template-driven form with validation",
+                "code": "<form #f='ngForm'>\n  <input ngModel name='name' required #name='ngModel' />\n  <div *ngIf='name.invalid && name.touched'>Name is required!</div>\n</form>"
+            },
+            {
+                "definition": "Access form control value in template-driven form",
+                "code": "<form #f='ngForm'>\n  <input ngModel name='name' required />\n  <button [disabled]='f.invalid'>Submit</button>\n</form>"
+            },
+            {
+                "definition": "Use `ngSubmit` in template-driven forms",
+                "code": "<form (ngSubmit)='onSubmit()'>\n  <input ngModel name='name' required />\n  <button type='submit'>Submit</button>\n</form>"
+            },
+            {
+                "definition": "Handle form submission in component for template-driven form",
+                "code": "onSubmit() { console.log(this.f.value); }"
+            },
+            {
+                "definition": "Dynamically add a form control to a reactive form",
+                "code": "this.form.addControl('newControl', new FormControl('', Validators.required));"
+            },
+            {
+                "definition": "Create a form array in reactive form",
+                "code": "this.formArray = this.fb.array([ this.fb.control('') ]);"
+            },
+            {
+                "definition": "Add form control to a form array",
+                "code": "this.formArray.push(this.fb.control('new value'));"
+            }
+        ]
       },
       {
           "id": 11,
@@ -149,21 +401,73 @@
       {
           "id": 12,
           "title": "Testing",
-          "items": [
-              {
-                  "definition": "Run unit tests",
-                  "code": "ng test"
-              },
-              {
-                  "definition": "Create a new test for a component",
-                  "code": "ng generate component component-name --spec"
-              }
-          ]
+       "items": [
+        {
+            "definition": "Run unit tests",
+            "code": "ng test"
+        },
+        {
+            "definition": "Create a new test for a component",
+            "code": "ng generate component component-name --spec"
+        },
+        {
+            "definition": "Run unit tests with a specific browser",
+            "code": "ng test --browsers Chrome"
+        },
+        {
+            "definition": "Run unit tests with code coverage",
+            "code": "ng test --code-coverage"
+        },
+        {
+            "definition": "Run unit tests in watch mode (automatically rerun tests on changes)",
+            "code": "ng test --watch"
+        },
+        {
+            "definition": "Run unit tests with a specific configuration",
+            "code": "ng test --configuration=production"
+        },
+        {
+            "definition": "Create a new test for a service",
+            "code": "ng generate service service-name --spec"
+        },
+        {
+            "definition": "Create a new test for a directive",
+            "code": "ng generate directive directive-name --spec"
+        },
+        {
+            "definition": "Create a new test for a pipe",
+            "code": "ng generate pipe pipe-name --spec"
+        },
+        {
+            "definition": "Generate a test for a module",
+            "code": "ng generate module module-name --spec"
+        },
+        {
+            "definition": "Add Jasmine matchers for async testing",
+            "code": "import { async, ComponentFixture, TestBed } from '@angular/core/testing';"
+        },
+        {
+            "definition": "Spy on a method using Jasmine",
+            "code": "const spy = spyOn(service, 'methodName').and.returnValue(of(mockData));"
+        },
+        {
+            "definition": "Test a component's input and output bindings",
+            "code": "component.inputProperty = 'value';\ncomponent.outputEvent.emit('value');"
+        },
+        {
+            "definition": "Test an Angular service with HTTP requests using HttpClientTestingModule",
+            "code": "import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';"
+        }
+    ]
       },
       {
           "id": 13,
           "title": "Build & Deployment",
           "items": [
+            {
+              "definition": "Serve the Angular application with a specific port",
+              "code": "ng serve --port 4201"
+          },
               {
                   "definition": "Build the Angular project for production",
                   "code": "ng build --prod"
@@ -261,6 +565,20 @@
                   "code": "const featureState = this.store.select(selectFeature);"
               }
           ]
-      }
+      },
+      {
+        "id": 16,
+        "title": "Folder Structure",
+        "items": [
+            {
+                "definition": "Typical folder structure for Angular project",
+                "code": "src/\n  app/\n    components/\n      home/\n        home.component.ts\n        home.component.html\n        home.component.scss\n    services/\n      auth.service.ts\n      user.service.ts\n    modules/\n      feature/\n        feature.module.ts\n        feature-routing.module.ts\n        feature.component.ts\n    shared/\n      directives/\n        custom.directive.ts\n      pipes/\n        custom.pipe.ts\n    app.module.ts\n    app.component.ts"
+            },
+            {
+                "definition": "Folder structure with feature modules",
+                "code": "src/\n  app/\n    modules/\n      auth/\n        auth.module.ts\n        auth-routing.module.ts\n        login/\n          login.component.ts\n          login.component.html\n    core/\n      services/\n        api.service.ts\n    shared/\n      components/\n        navbar/\n          navbar.component.ts\n    app.component.ts\n    app-routing.module.ts"
+            }
+        ]
+    }
   ]
 }
