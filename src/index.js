@@ -22,10 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const files = [
     "ubuntu.json",
     "curl.json",
-    "django.json",
-    "python.json",
-    "laravel.json",
     "git.json",
+    "python.json",
+    "django.json",
+    "laravel.json",
+    "angular.json",
   ];
 
   async function loadTopics() {
