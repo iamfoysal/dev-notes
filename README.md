@@ -1,8 +1,9 @@
-# Dev Notes
+# [`Dev Notes`](https://iamfoysal.github.io/dev-notes/)
+
 
 ## Overview
 Welcome to the **Dev Notes** repository! This project is a curated collection of development notes, tips, and best practices designed to enhance your workflow and boost productivity. It serves as a centralized resource hub, making it easier to find and share valuable information.
-
+- [`VISIT-LIVE `](https://iamfoysal.github.io/dev-notes/)
 ## Features
 - **Structured Organization**: A well-organized directory structure for storing and accessing development notes.
 - **Markdown Simplicity**: All notes are written in an easy-to-read markdown format.
