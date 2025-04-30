@@ -1,0 +1,27 @@
+{
+    "id": "TOPIC_NAME",
+    "title": "Topic_Name",
+    "slug": "topic_name",
+    "logo":"LOGO_URL",
+    "description": "DETAILS",
+    "contents": [
+        {
+            "id": 1,
+            "title": "Topic_part_1",
+            "items": [
+                {
+                    "definition": "Print to console",
+                    "code": "print('Hello, World!')"
+                },
+                {
+                    "definition": "Variable assignment",
+                    "code": "x = 5\ny = 'Hello'"
+                },
+                {
+                    "definition": "Basic data types",
+                    "code": "int, float, str, bool, list, tuple, dict, set"
+                }
+            ]
+        } // add here other sections
+    ]
+}

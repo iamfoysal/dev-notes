@@ -39,8 +39,53 @@
                     "code": "mv source-file destination-file"
                 },
                 {
+                    "definition": "Create File",
+                    "code": "touch file-name"
+                },
+                {
+                    "definition": "Rename File",
+                    "code": "mv old-file-name new-file-name"
+                },
+                {
                     "definition": "Delete a file",
                     "code": "rm file-name"
+                },
+                {
+                    "definition": "Create a directory",
+                    "code": "mkdir directory-name"
+                },
+                {
+                    "definition": "Remove a directory",
+                    "code": "rmdir directory-name"
+                },
+                {
+                    "definition": "Change to a directory",
+                    "code": "cd directory-name"
+                },
+                {
+                    "definition": "Display current directory",
+                    "code": "pwd"
+                },
+                {
+                    "definition": "Find files by name",
+                    "code": "find /path -name file-name"
+                },
+                {
+                    "definition": "Search for a string in files",
+                    "code": "grep 'string' file-name"
+                },
+                {
+                    "definition": "Display file contents",
+                    "code": "cat file-name"
+                },
+                {
+                    "definition": "View file contents page by page",
+                    "code": "less file-name"
+                },
+                {
+                    "definition": "Edit a file using nano",
+                    "code": "nano file-name"
+
                 }
             ]
         },
