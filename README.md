@@ -27,9 +27,12 @@ Follow these steps to get started with the repository:
 ## Contributing
 We welcome contributions to make this repository even better! Here are some guidelines to follow:
 
-1. **Check the [`data`](./data/) Directory**:
+Note: First frok the repository and 
+
+1. **Check the [`demo.json`](/data/demo.json) File**:
    - Use the same file format as existing notes for consistency.
    - Ensure your notes are well-structured and easy to understand.
+   - **Need Assistance?**: If you require any help or have questions, feel free to add a topic to the discussion board. This is a great way to collaborate and get support from the community.
 
 2. **Add Relevant Logos**:
    - If you're creating a new file for a new topic, include a related logo to enhance visual clarity.
